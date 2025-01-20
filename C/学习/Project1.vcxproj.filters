@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\指针">
+      <UniqueIdentifier>{434fe0b2-570c-4789-8390-d9e2617765da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\分支">
+      <UniqueIdentifier>{840130fb-642b-4db2-93c2-24955085d846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\循环">
+      <UniqueIdentifier>{d3399d8d-13c1-462c-b0a2-866699056ced}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\结构体">
+      <UniqueIdentifier>{37f81375-0f8f-4e57-9d66-37d9db4405cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数组">
+      <UniqueIdentifier>{d7db3687-cbae-4ab6-9baa-ac05097921a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\联合体">
+      <UniqueIdentifier>{8b6195d9-4700-4301-9c01-7931426b157d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="continue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="枚举类型.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="数位分离.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="1.地址和首地址.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="6.一维数组指针.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="3.字符指针.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="4.双重指针.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="1.if_else.c">
+      <Filter>源文件\分支</Filter>
+    </ClCompile>
+    <ClCompile Include="2.switch.c">
+      <Filter>源文件\分支</Filter>
+    </ClCompile>
+    <ClCompile Include="1.for.c">
+      <Filter>源文件\循环</Filter>
+    </ClCompile>
+    <ClCompile Include="2.while.c">
+      <Filter>源文件\循环</Filter>
+    </ClCompile>
+    <ClCompile Include="3.do_while.c">
+      <Filter>源文件\循环</Filter>
+    </ClCompile>
+    <ClCompile Include="5.指针作为函数参数.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="1.结构体的定义方式.c">
+      <Filter>源文件\结构体</Filter>
+    </ClCompile>
+    <ClCompile Include="2.结构体成员的赋值及访问.c">
+      <Filter>源文件\结构体</Filter>
+    </ClCompile>
+    <ClCompile Include="6.结构体指针.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="2.二维数组.c">
+      <Filter>源文件\数组</Filter>
+    </ClCompile>
+    <ClCompile Include="1.Union.c">
+      <Filter>源文件\联合体</Filter>
+    </ClCompile>
+    <ClCompile Include="2.App.c">
+      <Filter>源文件\联合体</Filter>
+    </ClCompile>
+    <ClCompile Include="3.常量指针和指针常量.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="2.指针.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="4.指针的运算.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="5.动态内存分配.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+    <ClCompile Include="1.一维数组.c">
+      <Filter>源文件\数组</Filter>
+    </ClCompile>
+    <ClCompile Include="7.二维数组指针.c">
+      <Filter>源文件\指针</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

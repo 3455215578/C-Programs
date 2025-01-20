@@ -1,0 +1,9 @@
+﻿  2.选择排序.c
+D:\C_Projects\排序\2.选择排序.c(15,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\C_Projects\排序\2.选择排序.c(21,25): warning C4018: “<”: 有符号/无符号不匹配
+D:\C_Projects\排序\2.选择排序.c(51,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\C_Projects\排序\2.选择排序.c(57,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\C_Projects\排序\2.选择排序.c(97,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\C_Projects\排序\2.选择排序.c(111,25): warning C4018: “<”: 有符号/无符号不匹配
+D:\C_Projects\排序\2.选择排序.c(144,26): warning C4018: “<”: 有符号/无符号不匹配
+  排序.vcxproj -> D:\C_Projects\排序\x64\Debug\排序.exe

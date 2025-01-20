@@ -1,0 +1,64 @@
+﻿  1.for.c
+  1.if_else.c
+  1.地址和首地址.c
+  2.switch.c
+  2.while.c
+  2.指针.c
+  2.数组指针.c
+D:\C_Projects\C\学习\2.数组指针.c(5,7): warning C4047: “初始化”:“int *”与“int (*)[3]”的间接级别不同
+  3.do_while.c
+  3.字符指针.c
+D:\C_Projects\C\学习\3.字符指针.c(14,8): warning C4047: “初始化”:“char *”与“char (*)[11]”的间接级别不同
+  4.指针的运算.c
+  6.结构体指针.c
+  4.双重指针.c
+  5.指针作为函数参数.c
+  3.常量指针和指针常量.c
+D:\C_Projects\C\学习\3.常量指针和指针常量.c(11,10): warning C4090: “初始化”: 不同的“const”限定符
+  App.c
+  continue.c
+  1.二维数组.c
+  Union.c
+D:\C_Projects\C\学习\Union.c(41,4): warning C4101: “a3”: 未引用的局部变量
+D:\C_Projects\C\学习\Union.c(33,8): warning C4101: “b2”: 未引用的局部变量
+D:\C_Projects\C\学习\Union.c(33,4): warning C4101: “a2”: 未引用的局部变量
+D:\C_Projects\C\学习\Union.c(25,14): warning C4101: “a1”: 未引用的局部变量
+D:\C_Projects\C\学习\Union.c(41,8): warning C4101: “b3”: 未引用的局部变量
+D:\C_Projects\C\学习\Union.c(25,18): warning C4101: “b1”: 未引用的局部变量
+  数位分离.c
+  2.字符数组.c
+  正在生成代码...
+D:\C_Projects\C\学习\5.指针作为函数参数.c(17): warning C4716: “exchange”: 必须返回一个值
+  正在编译...
+  7.数组指针.c
+D:\C_Projects\C\学习\7.数组指针.c(10,10): warning C4477: “printf”: 格式字符串“%p”需要类型“void *”的参数，但可变参数 2 拥有了类型“int”
+  枚举类型.c
+  2.结构体成员的赋值及访问.c
+  1.结构体的定义方式.c
+D:\C_Projects\C\学习\1.结构体的定义方式.c(33,22): warning C4101: “stu1”: 未引用的局部变量
+D:\C_Projects\C\学习\1.结构体的定义方式.c(38,10): warning C4101: “stu2”: 未引用的局部变量
+  正在生成代码...
+1.if_else.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+1.地址和首地址.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+2.switch.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+2.while.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+2.数组指针.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+3.do_while.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+3.字符指针.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+4.指针的运算.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+6.结构体指针.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+4.双重指针.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+5.指针作为函数参数.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+3.常量指针和指针常量.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+App.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+continue.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+1.二维数组.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+Union.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+数位分离.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+2.字符数组.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+7.数组指针.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+枚举类型.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+2.结构体成员的赋值及访问.obj : error LNK2005: _Print 已经在 6.结构体指针.obj 中定义
+2.结构体成员的赋值及访问.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+1.结构体的定义方式.obj : error LNK2005: _main 已经在 1.for.obj 中定义
+D:\C_Projects\C\学习\Debug\学习.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
