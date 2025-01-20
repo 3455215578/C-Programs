@@ -17,13 +17,13 @@ void Init_List(SeqList* list)
 	list->length = 0;
 }
 
-/** 在顺序表尾部添加元素 **/ 
+/** 在顺序表尾部添加元素 **/
 void Append_Element(SeqList* list, ElemType element)
 {
 	if (list->length >= MAXSIZE)
 	{
 		printf("顺序表已满\n");
-		return ;
+		return;
 	}
 
 	list->data[list->length] = element;
@@ -41,37 +41,39 @@ void Travel_List(SeqList* list)
 }
 
 // 87 56 34 43 45 12
-// index = 5;
-// 87 56 34 43 45
-
-
-
+// pos = 2
+// 
 // i = 5:  87 56 34 43 45 12 12
 // i = 4:  87 56 34 43 45 45 12
 // i = 3:  87 56 34 43 43 45 12
 // i = 2:  87 56 34 34 43 45 12
 // i = 1:  87 56 56 34 43 45 12
 
-/** 在顺序表指定位置插入指定元素 **/
-void Insert_Element(SeqList* list, int index, ElemType element)
+/** 在顺序表指定位置插入指定元素  在数据结构中，位置是从1开始数的 **/
+void Insert_Element(SeqList* list, int pos, ElemType element)
 {
-	// 若指定下标大于顺序表最大下标
-	if (index > (list->length - 1))
+	if (list->length > MAXSIZE)
 	{
-		printf("下标超过元素最大下标\n");
+		printf("顺序表已经满了\n");
+		return;
+	}
+	else if ((pos < 1) || (pos > list->length))
+	{
+		printf("插入位置错误\n");
 		return;
 	}
 	else
 	{
 		// 1.先把指定位置以及之后的元素往后挪一位
-		for (int i = (list->length - 1); i >= index; i--)
+		// 把位置转换为下标, 下标 = 位置 - 1
+		for (int i = (list->length - 1); i >= (pos - 1); i--)
 		{
 			list->data[i + 1] = list->data[i];
 		}
-	
+
 		// 2.再把指定元素插入到指定位置
-		list->data[index] = element;
-	
+		list->data[pos - 1] = element;
+
 		// 3.最后扩充顺序表长度
 		list->length++;
 	}
@@ -98,7 +100,7 @@ int main(void)
 	Travel_List(&list);
 
 	// 在指定下标插入指定元素
-	Insert_Element(&list, 6, 233);
+	Insert_Element(&list, 0, 233);
 
 	// 再次遍历顺序表验证
 	Travel_List(&list);
