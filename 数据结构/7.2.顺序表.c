@@ -55,28 +55,26 @@ void Travel_List(SeqList* list)
 /** 在顺序表指定位置插入指定元素 **/
 void Insert_Element(SeqList* list, int index, ElemType element)
 {
-	// 若插入的位置不在尾部则进入
-	if (index != list->length - 1)
+	// 若指定下标大于顺序表最大下标
+	if (index > (list->length - 1))
+	{
+		printf("下标超过元素最大下标\n");
+		return;
+	}
+	else
 	{
 		// 1.先把指定位置以及之后的元素往后挪一位
-		for (int i = (list->length - 1); i >= 1; i--)
+		for (int i = (list->length - 1); i >= index; i--)
 		{
 			list->data[i + 1] = list->data[i];
 		}
-
+	
 		// 2.再把指定元素插入到指定位置
 		list->data[index] = element;
-
+	
 		// 3.最后扩充顺序表长度
 		list->length++;
 	}
-	else 
-	{
-		list->data[list->length] = list->data[list->length - 1];
-		list->data[list->length - 1] = element;
-		list->length++;
-	}
-
 }
 
 int main(void)
@@ -96,14 +94,11 @@ int main(void)
 	Append_Element(&list, 45);
 	Append_Element(&list, 12);
 
-	printf("%d\n", list.length);
-
-	printf("\n");
 
 	Travel_List(&list);
 
-	// 在指定位置插入指定元素
-	Insert_Element(&list, 5, 233);
+	// 在指定下标插入指定元素
+	Insert_Element(&list, 6, 233);
 
 	// 再次遍历顺序表验证
 	Travel_List(&list);
