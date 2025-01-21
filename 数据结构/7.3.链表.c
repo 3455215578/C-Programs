@@ -22,6 +22,34 @@ Node* Init_Node(void)
 	return head;
 }
 
+/**
+
+	+———————————+    +—————————————————+	 +————————————————+
+	| 0 | node1 |    | element | node2 |	 | element | next |
+	+———————————+    +—————————————————+	 +————————————————+
+		head              node1		              node2
+
+**/
+
+
+/** 遍历链表 **/
+/** 哑节点：添加在链表头部，不存储数据的节点 **/
+/** 在包含哑节点的链表中，"头节点"指的是这个哑节点本身，而"第一个节点"则是指哑节点之后的第一个实际数据节点。 **/
+void Travel_Node(Node* head)
+{
+	// 让node指向node1
+	Node* node = head->next;
+
+	while (node != NULL)
+	{
+		printf("%d\n", node->data);
+
+		// 更新node
+		node = node->next; // 因为node1的指针域指向node2, 所以让node指向node1的指针域, 即node指向node2
+	}
+
+	printf("\n");
+}
 
 /**
 
@@ -60,46 +88,46 @@ Node* Init_Node(void)
 
 /** 插入节点 -- 1.头插法 **/
 /** 每次都在头节点之后插入新节点 **/
-void Insert_Node(Node* head, ElemType element)
+void Insert_Head(Node* head, ElemType element)
 {
 	// 1.在堆内存中创建新节点，并给它的数据域赋值            
 	Node* new_node = (Node*)malloc(sizeof(Node));        
 	new_node->data = element; 
 
-	// 2.将新节点的指针域设置为当前链表的头节点
+	// 2.把头节点的指针域赋值给新节点
 	new_node->next = head->next;
 
-	// 3.更新链表头指针
+	// 3.让头节点指向新节点
 	head->next = new_node;
 }
 
-/**
-
-	+———————————+    +—————————————————+	 +————————————————+
-	| 0 | node1 |    | element | node2 |	 | element | next |
-	+———————————+    +—————————————————+	 +————————————————+
-	    head              node1		              node2
-
-**/
-
-
-/** 遍历链表 **/
-/** 哑节点：添加在链表头部，不存储数据的节点 **/
-/** 在包含哑节点的链表中，"头节点"指的是这个哑节点本身，而"第一个节点"则是指哑节点之后的第一个实际数据节点。 **/
-void Travel_Node(Node* head)
+/** 获取尾节点 **/
+Node* Get_TailNode(Node* head)
 {
-	// 让node指向node1
 	Node* node = head->next;
-
 	while (node != NULL)
 	{
-		printf("%d\n", node->data);
-
-		// 更新node
-		node = node->next; // 因为node1的指针域指向node2, 所以让node指向node1的指针域, 即node指向node2
+		node = node->next;
 	}
 
-	printf("\n");
+	return node;
+}
+
+/** 插入节点 -- 2.尾插法 **/
+/** 把新节点作为新的尾节点 **/
+void Insert_Tail(Node* tail, ElemType element)
+{
+	// 1.在堆内存中创建新节点，并给它的数据域赋值            
+	Node* new_node = (Node*)malloc(sizeof(Node));
+	new_node->data = element;
+
+
+
+	// 2.把尾节点的指针域赋值给新节点
+	new_node->next = NULL;
+
+
+
 }
 
 int main(void)
@@ -107,9 +135,9 @@ int main(void)
 	// 初始化链表(此刻只有头节点)
 	Node* list = Init_Node();
 
-	Insert_Node(list, 10);
-	Insert_Node(list, 20);
-	Insert_Node(list, 30);
+	Insert_Head(list, 10);
+	Insert_Head(list, 20);
+	Insert_Head(list, 30);
 
 	Travel_Node(list);
 
