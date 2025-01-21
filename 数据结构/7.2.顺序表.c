@@ -33,11 +33,19 @@ void Append_Element(SeqList* list, ElemType element)
 /** 遍历顺序表 **/
 void Travel_List(SeqList* list)
 {
-	for (int i = 0; i < list->length; i++) // 循环的是顺序表而不是内部的数组
+	if (list->length == 0)
 	{
-		printf("%d\n", list->data[i]);
+		printf("空表\n");
 	}
-	printf("\n");
+	else
+	{
+		for (int i = 0; i < list->length; i++) // 循环的是顺序表而不是内部的数组
+		{
+			printf("%d\n", list->data[i]);
+		}
+	}
+
+
 }
 
 // 87 56 34 43 45 12
@@ -86,12 +94,12 @@ void Insert_Element(SeqList* list, int pos, ElemType element)
 // i = 4 : 87 34 43 45 45 12
 // i = 5 : 87 34 43 45 12 12
 
-/** 删除指定位置的元素 **/
-void Delete_Element(SeqList* list, int pos)
+/** 删除指定位置的元素, 并返回被删除的元素的值 **/
+void Delete_Element(SeqList* list, int pos, ElemType* Element)
 {
-	if (list->length > MAXSIZE)
+	if (list->length == 0)
 	{
-		printf("顺序表已经满了\n");
+		printf("空表\n");
 	}
 	else if ((pos < 1) || (pos > list->length))
 	{
@@ -99,6 +107,10 @@ void Delete_Element(SeqList* list, int pos)
 	}
 	else
 	{
+		// 返回被删除的元素的值
+		*Element = list->data[pos - 1];
+		printf("删除的元素为%d\n", *Element);
+
 		// 1.首先把要删除的位置后面的元素都往前挪一位，覆盖掉要被删除的元素
 		for (int i = pos; i < list->length; i++)
 		{
@@ -111,10 +123,24 @@ void Delete_Element(SeqList* list, int pos)
 	
 }
 
+/** 寻找指定元素对应的位置 **/
+int Find_Element(SeqList* list, ElemType element)
+{
+	for (int i = 0; i < list->length; i++)
+	{
+		if (list->data[i] == element)
+		{
+			return (i + 1);
+		}
+	}
+}
+
 int main(void)
 {
 	// 声明顺序表
 	SeqList list;
+
+	int find_pos;
 
 	// 初始化顺序表
 	Init_List(&list);
@@ -126,13 +152,13 @@ int main(void)
 	Append_Element(&list, 34);
 	Append_Element(&list, 43);
 	Append_Element(&list, 45);
+	Append_Element(&list, 34);
 	Append_Element(&list, 12);
 
 
 	Travel_List(&list);
 
-	Delete_Element(&list, 0);
-
+	printf("\n");
 	// 再次遍历顺序表验证
 	Travel_List(&list);
 
