@@ -41,8 +41,7 @@ void Travel_List(SeqList* list)
 }
 
 // 87 56 34 43 45 12
-// pos = 2
-// 
+// 要在pos = 2处插入元素
 // i = 5:  87 56 34 43 45 12 12
 // i = 4:  87 56 34 43 45 45 12
 // i = 3:  87 56 34 43 43 45 12
@@ -79,6 +78,39 @@ void Insert_Element(SeqList* list, int pos, ElemType element)
 	}
 }
 
+
+// 87 56 34 43 45 12
+// 要删除pos = 2对应的元素
+// i = 2 : 87 34 34 43 45 12
+// i = 3 : 87 34 43 43 45 12
+// i = 4 : 87 34 43 45 45 12
+// i = 5 : 87 34 43 45 12 12
+
+/** 删除指定位置的元素 **/
+void Delete_Element(SeqList* list, int pos)
+{
+	if (list->length > MAXSIZE)
+	{
+		printf("顺序表已经满了\n");
+	}
+	else if ((pos < 1) || (pos > list->length))
+	{
+		printf("插入位置错误\n");
+	}
+	else
+	{
+		// 1.首先把要删除的位置后面的元素都往前挪一位，覆盖掉要被删除的元素
+		for (int i = pos; i < list->length; i++)
+		{
+			list->data[i - 1] = list->data[i];
+		}
+
+		// 2. 再把顺序表长度减1，舍弃最后多余的数据，下一次操作将会覆盖这个数据
+		list->length--;
+	}
+	
+}
+
 int main(void)
 {
 	// 声明顺序表
@@ -99,8 +131,7 @@ int main(void)
 
 	Travel_List(&list);
 
-	// 在指定下标插入指定元素
-	Insert_Element(&list, 0, 233);
+	Delete_Element(&list, 0);
 
 	// 再次遍历顺序表验证
 	Travel_List(&list);
