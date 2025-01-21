@@ -1,4 +1,10 @@
 ﻿  7.2.顺序表.c
-D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(143,6): warning C4101: “find_pos”: 未引用的局部变量
-D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(136): warning C4715: “Find_Element”: 不是所有的控件路径都返回值
-  数据结构.vcxproj -> D:\GitHub\Code\C-Programs\数据结构\x64\Debug\数据结构.exe
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(62,1): error C2143: 语法错误: 缺少“;”(在“<<”的前面)
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(68,2): error C2059: 语法错误:“else”
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(73,2): error C2059: 语法错误:“else”
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(84,19): error C2059: 语法错误:“数字上的错误后缀”
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(94,19): error C2059: 语法错误:“数字上的错误后缀”
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(183,1): error C2143: 语法错误: 缺少“;”(在“<<”的前面)
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(185,1): error C2143: 语法错误: 缺少“;”(在“==”的前面)
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(189,1): error C2143: 语法错误: 缺少“;”(在“>>”的前面)
+D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(189,19): error C2059: 语法错误:“数字上的错误后缀”

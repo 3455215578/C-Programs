@@ -59,6 +59,7 @@ void Travel_List(SeqList* list)
 /** 在顺序表指定位置插入指定元素  在数据结构中，位置是从1开始数的 **/
 void Insert_Element(SeqList* list, int pos, ElemType element)
 {
+<<<<<<< HEAD
 	if (list->length > MAXSIZE)
 	{
 		printf("顺序表已经满了\n");
@@ -74,16 +75,34 @@ void Insert_Element(SeqList* list, int pos, ElemType element)
 		// 1.先把指定位置以及之后的元素往后挪一位
 		// 把位置转换为下标, 下标 = 位置 - 1
 		for (int i = (list->length - 1); i >= (pos - 1); i--)
+=======
+	// 若插入的位置不在尾部则进入
+	if (index != list->length - 1)
+	{
+		// 1.先把指定位置以及之后的元素往后挪一位
+		for (int i = (list->length - 1); i >= 1; i--)
+>>>>>>> parent of 36066a8 (Add)
 		{
 			list->data[i + 1] = list->data[i];
 		}
 
 		// 2.再把指定元素插入到指定位置
+<<<<<<< HEAD
 		list->data[pos - 1] = element;
+=======
+		list->data[index] = element;
+>>>>>>> parent of 36066a8 (Add)
 
 		// 3.最后扩充顺序表长度
 		list->length++;
 	}
+	else 
+	{
+		list->data[list->length] = list->data[list->length - 1];
+		list->data[list->length - 1] = element;
+		list->length++;
+	}
+
 }
 
 
@@ -155,10 +174,19 @@ int main(void)
 	Append_Element(&list, 34);
 	Append_Element(&list, 12);
 
+	printf("%d\n", list.length);
+
+	printf("\n");
 
 	Travel_List(&list);
 
+<<<<<<< HEAD
 	printf("\n");
+=======
+	// 在指定位置插入指定元素
+	Insert_Element(&list, 5, 233);
+
+>>>>>>> parent of 36066a8 (Add)
 	// 再次遍历顺序表验证
 	Travel_List(&list);
 
