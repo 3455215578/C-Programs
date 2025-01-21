@@ -1,4 +1,2 @@
-﻿  7.2.顺序表.c
-D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(149,6): warning C4101: “find_pos”: 未引用的局部变量
-D:\GitHub\Code\C-Programs\数据结构\7.2.顺序表.c(143): warning C4715: “Find_Element”: 不是所有的控件路径都返回值
+﻿  7.3.链表.c
   数据结构.vcxproj -> D:\GitHub\Code\C-Programs\数据结构\x64\Debug\数据结构.exe

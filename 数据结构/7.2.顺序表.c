@@ -15,7 +15,7 @@ typedef struct
 /** 栈内存又称自动内存，它的分配和释放都是人为不可控的，为避免顺序表内存空间被错误释放，在堆内存中进行动态内存分配初始化 **/
 
 /** 初始化函数开辟了一块地址用来初始化顺序表，再在主函数中把这块地址赋值给同类型的指针变量，并没有重复定义 **/
-SeqList* Init_List()
+SeqList* Init_List(void)
 {
 	SeqList* list = (SeqList*)malloc(sizeof(SeqList));
 	list->data = (ElemType*)malloc(sizeof(ElemType) * MAXSIZE);
