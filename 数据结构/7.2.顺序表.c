@@ -1,20 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAXSIZE 100 // 数组的初始长度
 typedef int ElemType; // typedef关键字用于创建现有类型的别名，便于修改
 
 typedef struct
 {
-	ElemType data[MAXSIZE]; // 数组只是作为存储数据的容器，对顺序表进行管理需要依靠length变量
+	ElemType* data; // 数组只是作为存储数据的容器，对顺序表进行管理需要依靠length变量
 	int length; // 当前顺序表存储的数据数
 
 }SeqList;
 
-/** 初始化顺序表为空表 **/
-void Init_List(SeqList* list)
+
+/** 栈内存又称自动内存，它的分配和释放都是人为不可控的，为避免顺序表内存空间被错误释放，在堆内存中进行动态内存分配初始化 **/
+
+/** 初始化函数开辟了一块地址用来初始化顺序表，再在主函数中把这块地址赋值给其他变量，并没有重复定义 **/
+SeqList* Init_List()
 {
-	// 数组在声明时就已经初始化了
+	SeqList* list = (SeqList*)malloc(sizeof(SeqList));
+	list->data = (ElemType*)malloc(sizeof(ElemType) * MAXSIZE);
 	list->length = 0;
+
+	return list;
 }
 
 /** 在顺序表尾部添加元素 **/
@@ -137,30 +144,28 @@ int Find_Element(SeqList* list, ElemType element)
 
 int main(void)
 {
-	// 声明顺序表
-	SeqList list;
+	SeqList* list = Init_List();
 
 	int find_pos;
 
 	// 初始化顺序表
 	Init_List(&list);
-	printf("顺序表目前存储%d个元素\n", list.length);
-	printf("顺序表目前占用%zu个字节\n", sizeof(list.data));
+	printf("顺序表目前存储%d个元素\n", list->length);
+	printf("顺序表目前占用%zu个字节\n", sizeof(list->data));
 
-	Append_Element(&list, 87);
-	Append_Element(&list, 56);
-	Append_Element(&list, 34);
-	Append_Element(&list, 43);
-	Append_Element(&list, 45);
-	Append_Element(&list, 34);
-	Append_Element(&list, 12);
+	Append_Element(list, 87);
+	Append_Element(list, 56);
+	Append_Element(list, 34);
+	Append_Element(list, 43);
+	Append_Element(list, 45);
+	Append_Element(list, 12);
 
 
-	Travel_List(&list);
+	Travel_List(list);
 
 	printf("\n");
 	// 再次遍历顺序表验证
-	Travel_List(&list);
+	Travel_List(list);
 
 	return 0;
 }
