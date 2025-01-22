@@ -37,7 +37,7 @@ Node* Create_HeadNode(void)
 /** 遍历链表 **/
 /** 哑节点：添加在链表头部，不存储数据的节点 **/
 /** 在包含哑节点的链表中，"头节点"指的是这个哑节点本身，而"第一个节点"则是指哑节点之后的第一个实际数据节点。 **/
-void Travel_Node(Node* list)
+void Travel_List(Node* list)
 {
 	// 让node指向node1
 	Node* node = list->next;
@@ -136,6 +136,42 @@ void Insert_Tail(Node* list, ElemType element)
 
 }
 
+/**
+			+———————————+    +—————————————————+	 +————————————————+	     +————————————————+
+			| 0 | node1 |    | element | node2 |	 | element | next |	     | element | next |
+			+———————————+    +—————————————————+	 +————————————————+	     +————————————————+
+				head                node1		           node2		            node3
+ pos       头节点不存储数据            1                      2	                      3
+**/
+
+/** 在指定位置插入节点 **/
+void Insert_Node(Node* list, int pos, ElemType element)
+{
+	// 1.先找到插入位置之前的节点
+	Node* node = list;
+
+	for (int i = 0; i < pos - 1; i++) // pos=2
+	{
+		if (node->next == NULL)
+		{
+			return;
+		}
+
+		node = node->next;
+	}
+
+	// 2.创建新节点
+	Node* new_node = (Node*)malloc(sizeof(Node));
+	new_node->data = element;
+
+	// 3.让新节点与插入位置之前的节点原来所指向的节点相连
+	new_node->next = node->next;
+
+	// 4.让插入位置之前的节点与新节点相连
+	node->next = new_node;
+}
+
+
 int main(void)
 {
 	// 初始化链表(此刻只有头节点)
@@ -145,7 +181,12 @@ int main(void)
 	Insert_Tail(list, 20);
 	Insert_Tail(list, 30);
 
-	Travel_Node(list);
+	Travel_List(list);
+
+	Insert_Node(list, 1, 23);
+
+	printf("\n");
+	Travel_List(list);
 
 	return 0;
 }
