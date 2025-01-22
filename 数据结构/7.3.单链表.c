@@ -117,11 +117,11 @@ Node* Get_TailNode(Node* list)
 }
 
 /** 插入节点 -- 2.尾插法 **/
-/** 把新节点作为新的尾节点， 并返回新的尾节点 **/
+/** 把新节点作为新的尾节点 **/
 void Insert_Tail(Node* list, ElemType element)
 {
 
-	// 获取链表的尾节点
+	// 每次都要获取链表的尾节点
 	Node* tail_node = Get_TailNode(list);
 
 	// 1.在堆内存中创建新节点，并给它的数据域赋值            
@@ -141,16 +141,9 @@ int main(void)
 	// 初始化链表(此刻只有头节点)
 	Node* list = Create_HeadNode();
 
-	//Insert_Head(list, 10);
-	//Insert_Head(list, 20);
-	//Insert_Head(list, 30);
-
 	Insert_Tail(list, 10);
 	Insert_Tail(list, 20);
 	Insert_Tail(list, 30);
-
-
-	//printf("%d\n", tail_node->data);
 
 	Travel_Node(list);
 
