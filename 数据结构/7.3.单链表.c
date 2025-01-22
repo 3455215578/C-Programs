@@ -139,11 +139,11 @@ void Insert_Tail(Node* list, ElemType element)
 }
 
 /**
-			+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+    +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	 +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	     +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
-			| 0 | node1 |    | element | node2 |	 | element | next |	     | element | next |
-			+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+    +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	 +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	     +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
-				head                node1		           node2		            node3
- pos             0                    1                      2	                      3
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+    +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	 +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	     +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
+		| 0 | node1 |    | element | node2 |	 | element | next |	     | element | next |
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+    +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	 +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	     +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
+			head                node1		           node2		            node3
+ pos         0                    1                      2	                      3
 **/
 
 /** Ñ°ÕÒÖ¸¶¨Î»ÖÃµÄÇ°Çý½Úµã **/
@@ -218,7 +218,7 @@ int Get_Length(Node* list)
 	Node* node = list;
 	int length = 0;
 
-	while (node->next != NULL)
+	while (node != NULL)
 	{
 		length++;
 		node = node->next;
@@ -227,19 +227,91 @@ int Get_Length(Node* list)
 	return length;
 }
 
+
+/**
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+    +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	 +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	     +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	    +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
+		| 0 | node1 |    | element | node2 |	 | element | next |	     | element | next |	    | element | NULL |
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+    +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	 +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	     +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	    +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
+			head                node1		           node2		            node3		           node4
+
+
+		Node* p = head->next;
+		Node* q;
+
+µÚÒ»´Î£º 
+		if(p != NULL)
+		{
+			q = p->next;
+			free(p);
+			p = q;
+		}
+
+
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+   	pq +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	     +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+		  +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
+		| 0 | node1 |   	   | element | next |	     | element | next |		  | element | NULL |
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+   	   +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+	     +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+		  +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
+			head                     node2		               node3		             node4
+
+
+µÚ¶þ´Î£º 
+		if(p != NULL)
+		{
+			q = p->next;
+			free(p);
+			p = q;
+		}
+
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+     pq +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+		  +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
+		| 0 | node1 |        | element | next |		  | element | NULL |
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+        +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+		  +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+
+			head                     node3		             node4
+
+
+µÚÈý´Î£º
+		if(p != NULL)
+		{
+			q = p->next;
+			free(p);
+			p = q;
+		}
+
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+     pq +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+		
+		| 0 | node1 |        | element | NULL |		
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+        +¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+		
+			head                     node4		    
+
+µÚËÄ´Î£º
+		if(p == NULL)
+		{
+			free(p);
+		}
+
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+  
+		| 0 | node1 |  
+		+¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª+  
+			head       
+
+**/
+
+/** ÊÍ·ÅÁ´±í **/
+/** Ö»±£ÁôÍ·½Úµã **/
+void Free_List(Node* head)
+{
+	Node* p = head;
+	Node* q;
+
+	while (p != NULL)
+	{
+		q = p->next;
+		free(p);
+		p = q;
+	}
+
+	head->next = NULL;
+}
+
 int main(void)
 {
-	// ³õÊ¼»¯Á´±í(´Ë¿ÌÖ»ÓÐÍ·½Úµã)
-	Node* list = Create_HeadNode();
-
-	Insert_Tail(list, 10);
-	//Insert_Tail(list, 20);
-	//Insert_Tail(list, 30);
-
-	Travel_List(list);
-
-	int length = Get_Length(list);
-	printf("%d\n", length);
 
 	return 0;
 }
