@@ -11,6 +11,7 @@ typedef struct node
 	                   // next指向的是节点
 }Node;
 
+/** 创建只有头节点的链表 **/
 Node* Create_HeadNode(void)
 {
 	// 定义头节点
@@ -173,49 +174,57 @@ Node* Find_PreNode(Node* list, int pos)
 /** 在指定位置插入节点 **/
 void Insert_Node(Node* list, int pos, ElemType element)
 {
-	if (pos < 1)
-	{
-		printf("位置错误\n");
-	}
-	else
-	{
-		// 1.先找到插入位置的前驱节点
-		Node* pre_node = Find_PreNode(list, pos);
+	// 1.先找到插入位置的前驱节点
+	Node* pre_node = Find_PreNode(list, pos);
 
-		// 2.创建新节点
-		Node* new_node = (Node*)malloc(sizeof(Node));
-		new_node->data = element;
+	// 2.创建新节点
+	Node* new_node = (Node*)malloc(sizeof(Node));
+	new_node->data = element;
 
-		// 3.让新节点与前驱节点原来所指向的节点相连
-		new_node->next = pre_node->next;
+	// 3.让新节点与前驱节点原来所指向的节点相连
+	new_node->next = pre_node->next;
 
-		// 4.让前驱节点与新节点相连
-		pre_node->next = new_node;
-	}
+	// 4.让前驱节点与新节点相连
+	pre_node->next = new_node;
+
 }
 
 /** 删除指定位置的节点并返回该节点存储的数据，同时释放该节点的内存空间 **/
 void Delete_Node(Node* list, int pos, ElemType* delete_data)
 {
-	if (pos < 1)
+	// 1. 先找到删除位置的前驱节点
+	Node* pre_node = Find_PreNode(list, pos);
+
+	if (pre_node->next == NULL)
 	{
-		printf("位置错误\n");
+		printf("要删除的节点不存在\n");
+		return;
 	}
-	else
+
+	// 2. 保存被删除的节点并存储节点中的数据
+	Node* delete_node = pre_node->next;
+	*delete_data = delete_node->data;
+
+	// 3.让前驱节点直接和删除位置的后继节点相连
+	pre_node->next = delete_node->next;
+
+	// 4.释放被删除节点的内存空间
+	free(delete_node);
+}
+
+/** 获取链表长度 **/
+int Get_Length(Node* list)
+{
+	Node* node = list;
+	int length = 0;
+
+	while (node->next != NULL)
 	{
-		// 1. 先找到删除位置的前驱节点
-		Node* pre_node = Find_PreNode(list, pos);
-
-		// 2. 保存被删除的节点并存储节点中的数据
-		Node* delete_node = pre_node->next;
-		*delete_data = delete_node->data;
-
-		// 3.让前驱节点直接和删除位置的后继节点相连
-		pre_node->next = delete_node->next;
-
-		// 4.释放被删除节点的内存空间
-		free(delete_node);
+		length++;
+		node = node->next;
 	}
+
+	return length;
 }
 
 int main(void)
@@ -223,18 +232,14 @@ int main(void)
 	// 初始化链表(此刻只有头节点)
 	Node* list = Create_HeadNode();
 
-	ElemType delete_data;
-
 	Insert_Tail(list, 10);
-	Insert_Tail(list, 20);
-	Insert_Tail(list, 30);
+	//Insert_Tail(list, 20);
+	//Insert_Tail(list, 30);
 
 	Travel_List(list);
 
-	Delete_Node(list, 0, &delete_data);
-
-	printf("\n");
-	Travel_List(list);
+	int length = Get_Length(list);
+	printf("%d\n", length);
 
 	return 0;
 }
