@@ -104,8 +104,9 @@ void Insert_Head(Node* head, ElemType element)
 /** 获取尾节点 **/
 Node* Get_TailNode(Node* head)
 {
-	Node* node = head->next;
-	while (node != NULL)
+	//Node* node = head->next;
+	Node* node = head;
+	while (node->next != NULL)
 	{
 		node = node->next;
 	}
@@ -139,7 +140,10 @@ int main(void)
 	Insert_Head(list, 20);
 	Insert_Head(list, 30);
 
-	Travel_Node(list);
+	Node* tail_node = Get_TailNode(list);
+	printf("%d\n", tail_node->data);
+
+	//Travel_Node(list);
 
 	return 0;
 }
