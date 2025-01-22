@@ -10,13 +10,15 @@ typedef struct node
 	struct node* next; // 在结构体定义被完成之前，编译器不知道 Node 是一个类型别名
 }Node;
 
-Node* Init_Node(void)
+Node* Create_HeadNode(void)
 {
 	// 定义头节点
 	//  data: 0;
 	//  next: NULL
 	Node* head = (Node*)malloc(sizeof(Node));
+
 	head->data = 0;
+
 	head->next = NULL;
 
 	return head;
@@ -35,10 +37,10 @@ Node* Init_Node(void)
 /** 遍历链表 **/
 /** 哑节点：添加在链表头部，不存储数据的节点 **/
 /** 在包含哑节点的链表中，"头节点"指的是这个哑节点本身，而"第一个节点"则是指哑节点之后的第一个实际数据节点。 **/
-void Travel_Node(Node* head)
+void Travel_Node(Node* list)
 {
 	// 让node指向node1
-	Node* node = head->next;
+	Node* node = list->next;
 
 	while (node != NULL)
 	{
@@ -88,24 +90,24 @@ void Travel_Node(Node* head)
 
 /** 插入节点 -- 1.头插法 **/
 /** 每次都在头节点之后插入新节点 **/
-void Insert_Head(Node* head, ElemType element)
+void Insert_Head(Node* list, ElemType element)
 {
 	// 1.在堆内存中创建新节点，并给它的数据域赋值            
 	Node* new_node = (Node*)malloc(sizeof(Node));        
 	new_node->data = element; 
 
 	// 2.把头节点的指针域赋值给新节点
-	new_node->next = head->next;
+	new_node->next = list->next;
 
 	// 3.让头节点指向新节点
-	head->next = new_node;
+	list->next = new_node;
 }
 
 /** 获取尾节点 **/
-Node* Get_TailNode(Node* head)
+Node* Get_TailNode(Node* list)
 {
-	//Node* node = head->next;
-	Node* node = head;
+	Node* node = list;
+
 	while (node->next != NULL)
 	{
 		node = node->next;
@@ -115,35 +117,42 @@ Node* Get_TailNode(Node* head)
 }
 
 /** 插入节点 -- 2.尾插法 **/
-/** 把新节点作为新的尾节点 **/
-void Insert_Tail(Node* tail, ElemType element)
+/** 把新节点作为新的尾节点， 并返回新的尾节点 **/
+void Insert_Tail(Node* list, ElemType element)
 {
+
+	// 获取链表的尾节点
+	Node* tail_node = Get_TailNode(list);
+
 	// 1.在堆内存中创建新节点，并给它的数据域赋值            
 	Node* new_node = (Node*)malloc(sizeof(Node));
 	new_node->data = element;
 
-
-
 	// 2.把尾节点的指针域赋值给新节点
-	new_node->next = NULL;
+	new_node->next = tail_node->next;
 
-
+	// 3.把尾节点的指针域赋值给新节点
+	tail_node->next = new_node;
 
 }
 
 int main(void)
 {
 	// 初始化链表(此刻只有头节点)
-	Node* list = Init_Node();
+	Node* list = Create_HeadNode();
 
-	Insert_Head(list, 10);
-	Insert_Head(list, 20);
-	Insert_Head(list, 30);
+	//Insert_Head(list, 10);
+	//Insert_Head(list, 20);
+	//Insert_Head(list, 30);
 
-	Node* tail_node = Get_TailNode(list);
-	printf("%d\n", tail_node->data);
+	Insert_Tail(list, 10);
+	Insert_Tail(list, 20);
+	Insert_Tail(list, 30);
 
-	//Travel_Node(list);
+
+	//printf("%d\n", tail_node->data);
+
+	Travel_Node(list);
 
 	return 0;
 }
