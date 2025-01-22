@@ -141,13 +141,12 @@ void Insert_Tail(Node* list, ElemType element)
 			| 0 | node1 |    | element | node2 |	 | element | next |	     | element | next |
 			+———————————+    +—————————————————+	 +————————————————+	     +————————————————+
 				head                node1		           node2		            node3
- pos       头节点不存储数据            1                      2	                      3
+ pos             0                    1                      2	                      3
 **/
 
-/** 在指定位置插入节点 **/
-void Insert_Node(Node* list, int pos, ElemType element)
+/** 寻找指定位置的前驱节点 **/
+Node* Find_PreNode(Node* list, int pos)
 {
-	// 1.先找到插入位置之前的节点
 	Node* node = list;
 
 	for (int i = 0; i < pos - 1; i++) // pos=2
@@ -160,17 +159,39 @@ void Insert_Node(Node* list, int pos, ElemType element)
 		node = node->next;
 	}
 
+	return node;
+
+}
+
+/** 在指定位置插入节点 **/
+void Insert_Node(Node* list, int pos, ElemType element)
+{
+	// 1.先找到插入位置的前驱节点
+	Node* pre_node = Find_PreNode(list, pos);
+
 	// 2.创建新节点
 	Node* new_node = (Node*)malloc(sizeof(Node));
 	new_node->data = element;
 
-	// 3.让新节点与插入位置之前的节点原来所指向的节点相连
-	new_node->next = node->next;
+	// 3.让新节点与前驱节点原来所指向的节点相连
+	new_node->next = pre_node->next;
 
-	// 4.让插入位置之前的节点与新节点相连
-	node->next = new_node;
+	// 4.让前驱节点与新节点相连
+	pre_node->next = new_node;
 }
 
+/** 删除指定位置的节点并返回该节点存储的数据，同时释放该节点的内存空间 **/
+void Delete_Node(Node* list, int pos, Node* delete_node)
+{
+	// 1. 先找到删除位置的前驱节点
+	Node* pre_node = Find_PreNode(list, pos);
+
+	// 2. 保存被删除的节点
+	delete_node = pre_node->next;
+
+	// 3.让前驱节点直接和删除位置的后继节点相连
+	pre_node->next = delete_node->next;
+}
 
 int main(void)
 {
