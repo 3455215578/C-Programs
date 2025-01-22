@@ -8,6 +8,7 @@ typedef struct node
 {
 	ElemType data;
 	struct node* next; // 在结构体定义被完成之前，编译器不知道 Node 是一个类型别名
+	                   // next指向的是节点
 }Node;
 
 Node* Create_HeadNode(void)
@@ -147,50 +148,74 @@ void Insert_Tail(Node* list, ElemType element)
 /** 寻找指定位置的前驱节点 **/
 Node* Find_PreNode(Node* list, int pos)
 {
-	Node* node = list;
-
-	for (int i = 0; i < pos - 1; i++) // pos=2
+	if (pos == 0)
 	{
-		if (node->next == NULL)
+		printf("头节点没有前驱节点\n");
+	}
+	else
+	{
+		Node* node = list;
+
+		for (int i = 0; i < pos - 1; i++) // pos=2
 		{
-			return;
+			if (node->next == NULL)
+			{
+				return;
+			}
+
+			node = node->next;
 		}
 
-		node = node->next;
+		return node;
 	}
-
-	return node;
-
 }
 
 /** 在指定位置插入节点 **/
 void Insert_Node(Node* list, int pos, ElemType element)
 {
-	// 1.先找到插入位置的前驱节点
-	Node* pre_node = Find_PreNode(list, pos);
+	if (pos < 1)
+	{
+		printf("位置错误\n");
+	}
+	else
+	{
+		// 1.先找到插入位置的前驱节点
+		Node* pre_node = Find_PreNode(list, pos);
 
-	// 2.创建新节点
-	Node* new_node = (Node*)malloc(sizeof(Node));
-	new_node->data = element;
+		// 2.创建新节点
+		Node* new_node = (Node*)malloc(sizeof(Node));
+		new_node->data = element;
 
-	// 3.让新节点与前驱节点原来所指向的节点相连
-	new_node->next = pre_node->next;
+		// 3.让新节点与前驱节点原来所指向的节点相连
+		new_node->next = pre_node->next;
 
-	// 4.让前驱节点与新节点相连
-	pre_node->next = new_node;
+		// 4.让前驱节点与新节点相连
+		pre_node->next = new_node;
+	}
 }
 
 /** 删除指定位置的节点并返回该节点存储的数据，同时释放该节点的内存空间 **/
-void Delete_Node(Node* list, int pos, Node* delete_node)
+void Delete_Node(Node* list, int pos, ElemType* delete_data)
 {
-	// 1. 先找到删除位置的前驱节点
-	Node* pre_node = Find_PreNode(list, pos);
+	if (pos < 1)
+	{
+		printf("位置错误\n");
+	}
+	else
+	{
+		// 1. 先找到删除位置的前驱节点
+		Node* pre_node = Find_PreNode(list, pos);
 
-	// 2. 保存被删除的节点
-	delete_node = pre_node->next;
+		// 2. 保存被删除的节点并存储节点中的数据
+		Node* delete_node = pre_node->next;
+		*delete_data = delete_node->data;
 
-	// 3.让前驱节点直接和删除位置的后继节点相连
-	pre_node->next = delete_node->next;
+		// 3.让前驱节点直接和删除位置的后继节点相连
+		pre_node->next = delete_node->next;
+
+		// 4.释放被删除节点的内存空间
+		free(delete_node);
+	}
 }
 
 int main(void)
@@ -198,13 +223,15 @@ int main(void)
 	// 初始化链表(此刻只有头节点)
 	Node* list = Create_HeadNode();
 
+	ElemType delete_data;
+
 	Insert_Tail(list, 10);
 	Insert_Tail(list, 20);
 	Insert_Tail(list, 30);
 
 	Travel_List(list);
 
-	Insert_Node(list, 1, 23);
+	Delete_Node(list, 0, &delete_data);
 
 	printf("\n");
 	Travel_List(list);
