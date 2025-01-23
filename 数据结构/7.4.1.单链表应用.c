@@ -107,6 +107,7 @@ Node* Find_BackNode(Node* head, int k)
 
 
 /** 寻找倒数第k个节点--快慢指针法 **/
+/** 只用了一次遍历 **/
 Node* Find_BackNode_Double_Point(Node* head, int k)
 {
 	// 1.先让快慢指针都指向第一个节点
