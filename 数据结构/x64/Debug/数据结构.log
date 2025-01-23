@@ -1,4 +1,2 @@
-﻿  7.3.单链表.c
-D:\GitHub\Code\C-Programs\数据结构\7.3.单链表.c(164,5): warning C4033: “Find_PreNode”必须返回值
-D:\GitHub\Code\C-Programs\数据结构\7.3.单链表.c(172): warning C4715: “Find_PreNode”: 不是所有的控件路径都返回值
+﻿  7.4.单链表应用.c
   数据结构.vcxproj -> D:\GitHub\Code\C-Programs\数据结构\x64\Debug\数据结构.exe
