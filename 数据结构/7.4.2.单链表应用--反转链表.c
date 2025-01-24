@@ -83,81 +83,29 @@ int Get_Length(Node* head)
 	return length;
 }
 
-/**
-	first = Create_HeadNote();
-	second = head->next;
-	third = second->next;
 
-	Node* node = second;
+// Head -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> NULL
 
-	(fir)         (sec)   (thi)
-	NULL  Head ->   1   ->  2  -> 3 -> 4 -> 5 -> 6 -> NULL 
-	             (node)
-**/
-
-/**
-
- 第一次:
-①让second指向fir: sec->next = fir;
-
-
-
-②：更新fir,sec,thi的位置为下：
-							fir = node;
-							sec = node->next;
-							thi = sec->next;
-
-③更新node: node = node->next;
-
-//	       fir  sec  thi
-//  NULL <- 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> NULL
-               (node)
-
-**/
-
-
-
-/**
-
- 第二次:
-①让second指向fir: 
-
-②：更新fir,sec,thi的位置:
-
-**/
-
-
+// pre           curr  
+// NULL    Head -> 1 ->  2 -> 3 -> 4 -> 5 -> 6 -> NULL
 
 /** 链表反转 **/
-void Reverse_List(Node* head)
+void* Reverse_List(Node* head)
 {
-	Node* first;
-	Node* second;
-	Node* third;
+	Node* prev = NULL;
+	Node* curr = head->next;
+	Node* next; // 当curr指向prev时, next用来连接后面的节点
 
-	first = Create_HeadNode();
-	second = head->next;
-	third = second->next;
-
-	Node* node = second;
-
-	while (second != NULL)
+	// 节点移动的顺序
+	while (curr != NULL)
 	{
-		// 让sec指向fir
-		second->next = first;
-
-		// 更新fir、sec、thi的位置
-		first = node;
-		second = node->next;
-		third = second->next;
-
-		// 更新node
-		node = node->next;
-
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
 	}
 
-	second = Create_HeadNode();
-	second->next = first;
+	head->next = prev;
 
 }
 
