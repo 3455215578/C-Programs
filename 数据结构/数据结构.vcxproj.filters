@@ -51,5 +51,8 @@
     <ClCompile Include="7.4.3.单链表应用--删除中间节点.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="7.4.4.单链表应用.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
