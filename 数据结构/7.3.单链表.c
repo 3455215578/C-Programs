@@ -335,7 +335,7 @@ int main(void)
 
 	Travel_List(list);
 
-	Delete_Node(list, 0, &delete_data);
+	Delete_Node(list, 1, &delete_data);
 
 	Travel_List(list);
 
