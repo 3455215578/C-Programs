@@ -75,24 +75,24 @@ Node* Find_PreNode(Node* head, int pos)
 	if (pos == 0)
 	{
 		printf("头节点没有前驱节点\n");
+		return NULL;
 	}
-	else
+
+	Node* node = head;
+
+	for (int i = 0; i < pos - 1; i++) // pos=2
 	{
-		Node* node = head;
-
-		for (int i = 0; i < pos - 1; i++)
+		if (node->next == NULL)
 		{
-			if (node->next == NULL)
-			{
-				return;
-			}
-
-			node = node->next;
+			return NULL;
 		}
 
-		return node;
+		node = node->next;
+
 	}
-}
+
+	return node;
+}	
 
 /** 在指定位置插入节点 **/
 void Insert_Node(Node* head, int pos, ElemType element)

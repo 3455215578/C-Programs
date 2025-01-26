@@ -152,23 +152,23 @@ Node* Find_PreNode(Node* head, int pos)
 	if (pos == 0)
 	{
 		printf("头节点没有前驱节点\n");
+		return NULL;
 	}
-	else
+
+	Node* node = head;
+
+	for (int i = 0; i < pos - 1; i++) // pos=2
 	{
-		Node* node = head;
-
-		for (int i = 0; i < pos - 1; i++) // pos=2
+		if (node->next == NULL)
 		{
-			if (node->next == NULL)
-			{
-				return;
-			}
-
-			node = node->next;
+			return NULL;
 		}
 
-		return node;
+		node = node->next;
+
 	}
+
+	return node;
 }
 
 /** 在指定位置插入节点 **/
@@ -189,25 +189,39 @@ void Insert_Node(Node* head, int pos, ElemType element)
 
 }
 
+/** 寻找尾节点 **/
+Node* Find_EndNode(Node* head)
+{
+	Node* node = head;
+
+	while (node->next != NULL)
+	{
+		node = node->next;
+	}
+
+	return node;
+}
+
+// Head 10 20 NULL
 /** 删除指定位置的节点并返回该节点存储的数据，同时释放该节点的内存空间 **/
 void Delete_Node(Node* head, int pos, ElemType* delete_data)
 {
 	// 1. 先找到删除位置的前驱节点
 	Node* pre_node = Find_PreNode(head, pos);
 
-	if (pre_node->next == NULL)
+	if ((pre_node == NULL) || (pre_node->next == NULL))
 	{
-		printf("要删除的节点不存在\n");
-		return;
+		printf("删除位置错误\n");
+		return NULL;
 	}
 
 	// 2. 保存被删除的节点并存储节点中的数据
 	Node* delete_node = pre_node->next;
 	*delete_data = delete_node->data;
 
-	// 3.让前驱节点直接和删除位置的后继节点相连
+	// 3.指向
 	pre_node->next = delete_node->next;
-
+	
 	// 4.释放被删除节点的内存空间
 	free(delete_node);
 }
@@ -312,6 +326,18 @@ void Free_List(Node* head)
 
 int main(void)
 {
+	Node* list = Create_HeadNode();
+
+	Insert_Head(list, 20);
+	Insert_Head(list, 10);
+
+	ElemType delete_data;
+
+	Travel_List(list);
+
+	Delete_Node(list, 0, &delete_data);
+
+	Travel_List(list);
 
 	return 0;
 }

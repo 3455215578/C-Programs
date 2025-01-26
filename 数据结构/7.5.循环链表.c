@@ -89,8 +89,6 @@ void Insert_Tail(Node* head, ElemType element)
 
 }
 
-
-
 /**
 		+！！！！！！！！！！！+    +！！！！！！！！！！！！！！！！！+	 +！！！！！！！！！！！！！！！！+	     +！！！！！！！！！！！！！！！！+	    +！！！！！！！！！！！！！！！！+
 		| 0 | node1 |    | element | node2 |	 | element | next |	     | element | next |	    | element | NULL |
