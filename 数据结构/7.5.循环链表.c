@@ -193,7 +193,6 @@ Node* Find_EndNode(Node* head)
 
 /** 判断链表是否有环 **/
 /** 若有，则返回相遇时的节点 **/
-
 bool Is_Circle(Node* head, Node** encounter_node)
 {
 	// 快慢指针
@@ -268,10 +267,9 @@ int main(void)
 	// 尾节点指向头节点
 	end_node->next = enter_node;
 
-	Node* node = NULL;
-	node = Find_EnterNode(list);
+	enter_node = Find_EnterNode(list);
 
-	printf("%d\n", node->data);
+	printf("%d\n", enter_node->data);
 
 	return 0;
 }
