@@ -1,5 +1,4 @@
-﻿  7.4.4.单链表应用.c
-D:\GitHub\Code\C-Programs\数据结构\7.4.4.单链表应用.c(87,5): warning C4033: “Find_PreNode”必须返回值
-D:\GitHub\Code\C-Programs\数据结构\7.4.4.单链表应用.c(95): warning C4715: “Find_PreNode”: 不是所有的控件路径都返回值
-D:\GitHub\Code\C-Programs\数据结构\7.4.4.单链表应用.c(138): warning C4716: “Reverse_List”: 必须返回一个值
+﻿  7.5.循环链表.c
+D:\GitHub\Code\C-Programs\数据结构\7.5.循环链表.c(247,3): warning C4033: “Find_EnterNode”必须返回值
+D:\GitHub\Code\C-Programs\数据结构\7.5.循环链表.c(249): warning C4715: “Find_EnterNode”: 不是所有的控件路径都返回值
   数据结构.vcxproj -> D:\GitHub\Code\C-Programs\数据结构\x64\Debug\数据结构.exe

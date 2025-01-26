@@ -213,23 +213,24 @@ int main(void)
 	Reverse_List(new_list);
 
 	// 3.将新链表的节点间隔插入到原链表
-
 	temp1 = list->next;
 	Node* temp2 = new_list->next;
 
-	// 保存原链表和新链表的节点
-	Node *temp_node1, *temp_node2;
 	while ((temp1 != NULL) && (temp2 != NULL))
 	{
-		temp_node1 = temp1;
-		temp_node2 = temp2;
+		// 保存temp1、temp2的下一个节点， 为后面改变temp1和temp2的指向作准备
+		Node* p = temp1->next;
+		Node* q = temp2->next;
 
-		temp2->next = temp_node1->next;
+		temp2->next = temp1->next;
 		temp1->next = temp2;
 
 
+		temp1 = p;
+		temp2 = q;
 	}
 
+	Travel_List(list);
 
 	return 0;
 }
