@@ -94,7 +94,7 @@ Node* Find_PreNode(Node* head, int pos)
 	if (pos == 0)
 	{
 		printf("头节点没有前驱节点\n");
-		return NULL;
+		return;
 	}
 
 	Node* node = head;
@@ -103,7 +103,7 @@ Node* Find_PreNode(Node* head, int pos)
 	{
 		if (node->next == NULL)
 		{
-			return NULL;
+			return;
 		}
 
 		node = node->next;

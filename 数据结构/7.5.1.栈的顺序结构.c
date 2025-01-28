@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+/** œ»Ω¯∫Û≥ˆ **/
+
 #define MAXSIZE 100
 
 typedef int ElemType;
@@ -42,7 +44,7 @@ void Push_Stack(Stack* stack, ElemType element)
 	if (stack->top >= MAXSIZE - 1)
 	{
 		printf("’ª¬˙\n");
-		return NULL;
+		return;
 	}
 	else
 	{
@@ -57,7 +59,7 @@ void Pop_Stack(Stack* stack, ElemType* delete_data)
 	if (stack->top == -1)
 	{
 		printf("ø’’ª\n");
-		return NULL;
+		return;
 	}
 	else 
 	{
@@ -72,7 +74,7 @@ void Get_Top(Stack* stack, ElemType* top_data)
 	if (stack->top == -1)
 	{
 		printf("ø’’ª\n");
-		return NULL;
+		return;
 	}
 	else
 	{
@@ -86,7 +88,7 @@ void Travel_Stack(Stack* stack)
 	if (stack->top == -1)
 	{
 		printf("ø’’ª\n");
-		return NULL;
+		return;
 	}
 	else
 	{

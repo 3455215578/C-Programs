@@ -66,5 +66,8 @@
     <ClCompile Include="7.5.2.栈的链式结构.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="7.6.队列的顺序结构.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

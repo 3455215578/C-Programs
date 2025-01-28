@@ -152,7 +152,7 @@ Node* Find_PreNode(Node* head, int pos)
 	if (pos == 0)
 	{
 		printf("头节点没有前驱节点\n");
-		return NULL;
+		return;
 	}
 
 	Node* node = head;
@@ -161,7 +161,7 @@ Node* Find_PreNode(Node* head, int pos)
 	{
 		if (node->next == NULL)
 		{
-			return NULL;
+			return;
 		}
 
 		node = node->next;
@@ -212,7 +212,7 @@ void Delete_Node(Node* head, int pos, ElemType* delete_data)
 	if ((pre_node == NULL) || (pre_node->next == NULL))
 	{
 		printf("删除位置错误\n");
-		return NULL;
+		return;
 	}
 
 	// 2. 保存被删除的节点并存储节点中的数据
