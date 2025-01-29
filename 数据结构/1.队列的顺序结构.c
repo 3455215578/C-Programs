@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 /** 先进先出 **/
+/** 顺序结构中的尾指针指向的是没有数据的空位 **/
 
 #define MAXSIZE 100
 
@@ -32,7 +33,6 @@ bool Queue_Is_Empty(Queue* queue)
 {
 	if (queue->front == queue->rear)
 	{
-		printf("队列空\n");
 		return true;
 	}
 	else
@@ -44,9 +44,8 @@ bool Queue_Is_Empty(Queue* queue)
 /** 出队 **/
 void De_Queue(Queue* queue, ElemType* delete_data)
 {
-	if (queue->front == queue->rear)
+	if (Queue_Is_Empty(queue))
 	{
-		printf("队列空\n");
 		return;
 	}
 
@@ -87,7 +86,6 @@ void Enter_Queue(Queue* queue, ElemType element)
 	{
 		if (Queue_Is_Full(queue))
 		{
-			printf("队列满\n");
 			return;
 		}
 	}
@@ -105,15 +103,14 @@ void Travel_Queue(Queue* queue)
 }
 
 /** 获取队头数据 **/
-void Get_Head(Queue* queue, ElemType* data)
+ElemType Get_Head(Queue* queue)
 {
-	if (queue->front == queue->rear)
+	if (Queue_Is_Empty(queue))
 	{
-		printf("队列空\n");
 		return;
 	}
 
-	*data = queue->data[queue->front];
+	return queue->data[queue->front];
 }
 
 int main(void)
@@ -132,8 +129,7 @@ int main(void)
 	De_Queue(queue, &delete_data);
 	printf("%d\n", delete_data);
 
-	ElemType head_data;
-	Get_Head(queue, &head_data);
+	ElemType head_data = Get_Head(queue);
 	printf("%d\n", head_data);
 
 	return 0;

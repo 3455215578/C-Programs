@@ -1,2 +1,7 @@
-﻿  7.6.队列的顺序结构.c
+﻿  3.队列的链式结构.c
+D:\GitHub\Code\C-Programs\数据结构\3.队列的链式结构.c(55,17): warning C4047: “=”:“ElemType *”与“ElemType”的间接级别不同
+D:\GitHub\Code\C-Programs\数据结构\3.队列的链式结构.c(75,15): warning C4047: “=”:“ElemType”与“ElemType *”的间接级别不同
+D:\GitHub\Code\C-Programs\数据结构\3.队列的链式结构.c(93,3): warning C4033: “Get_Top”必须返回值
+D:\GitHub\Code\C-Programs\数据结构\3.队列的链式结构.c(96,2): warning C4047: “return”:“ElemType”与“ElemType *”的间接级别不同
+D:\GitHub\Code\C-Programs\数据结构\3.队列的链式结构.c(97): warning C4715: “Get_Top”: 不是所有的控件路径都返回值
   数据结构.vcxproj -> D:\GitHub\Code\C-Programs\数据结构\x64\Debug\数据结构.exe

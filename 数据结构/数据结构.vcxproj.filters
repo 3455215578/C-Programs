@@ -13,61 +13,79 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\1.链表">
+      <UniqueIdentifier>{df35b2ad-16f4-430a-8cfe-db3056336842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\2.栈">
+      <UniqueIdentifier>{cab10e79-d758-438c-a228-1b6a74f105af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\3.队列">
+      <UniqueIdentifier>{8bc87167-7317-4787-bc89-fab6cf028459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\0.基础">
+      <UniqueIdentifier>{c2b1e48f-db52-4106-b8b9-18286161337c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="1.线性表引入.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="4.1.单链表应用.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="4.2.单链表应用--反转链表.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="4.3.单链表应用--删除中间节点.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="4.4.单链表应用.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="5.循环链表.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="6.双向链表.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="2.顺序表.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="3.单链表.c">
+      <Filter>源文件\1.链表</Filter>
+    </ClCompile>
+    <ClCompile Include="1.栈的顺序结构.c">
+      <Filter>源文件\2.栈</Filter>
+    </ClCompile>
+    <ClCompile Include="2.栈的链式结构.c">
+      <Filter>源文件\2.栈</Filter>
+    </ClCompile>
+    <ClCompile Include="1.队列的顺序结构.c">
+      <Filter>源文件\3.队列</Filter>
+    </ClCompile>
+    <ClCompile Include="2.循环队列.c">
+      <Filter>源文件\3.队列</Filter>
+    </ClCompile>
     <ClCompile Include="1.字符串.c">
-      <Filter>源文件</Filter>
+      <Filter>源文件\0.基础</Filter>
     </ClCompile>
     <ClCompile Include="2.遍历数组.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="4.指针与数组的关系.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="5.结构体.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="6.动态分配内存.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="7.1.线性表引入.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="7.2.顺序表.c">
-      <Filter>源文件</Filter>
+      <Filter>源文件\0.基础</Filter>
     </ClCompile>
     <ClCompile Include="3.函数按值传递和按地址传递.c">
-      <Filter>源文件</Filter>
+      <Filter>源文件\0.基础</Filter>
     </ClCompile>
-    <ClCompile Include="7.3.单链表.c">
-      <Filter>源文件</Filter>
+    <ClCompile Include="4.指针与数组的关系.c">
+      <Filter>源文件\0.基础</Filter>
     </ClCompile>
-    <ClCompile Include="7.4.1.单链表应用.c">
-      <Filter>源文件</Filter>
+    <ClCompile Include="5.结构体.c">
+      <Filter>源文件\0.基础</Filter>
     </ClCompile>
-    <ClCompile Include="7.4.2.单链表应用--反转链表.c">
-      <Filter>源文件</Filter>
+    <ClCompile Include="6.动态分配内存.c">
+      <Filter>源文件\0.基础</Filter>
     </ClCompile>
-    <ClCompile Include="7.4.3.单链表应用--删除中间节点.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="7.4.4.单链表应用.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="7.4.5.循环链表.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="7.4.6.双向链表.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="7.5.1.栈的顺序结构.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="7.5.2.栈的链式结构.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="7.6.队列的顺序结构.c">
-      <Filter>源文件</Filter>
+    <ClCompile Include="3.队列的链式结构.c">
+      <Filter>源文件\3.队列</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
