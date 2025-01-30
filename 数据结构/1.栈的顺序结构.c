@@ -56,47 +56,41 @@ void Push_Stack(Stack* stack, ElemType element)
 void Pop_Stack(Stack* stack, ElemType* delete_data)
 {
 	// ø’’ª
-	if (stack->top == -1)
+	if (Stack_Is_Empty(stack))
 	{
-		printf("ø’’ª\n");
 		return;
 	}
-	else 
-	{
-		*delete_data = stack->data[stack->top];
-		stack->top--;
-	}
+
+	*delete_data = stack->data[stack->top];
+	stack->top--;
+
 }
 
 void Get_Top(Stack* stack, ElemType* top_data)
 {
 	// ø’’ª
-	if (stack->top == -1)
+	if (Stack_Is_Empty(stack))
 	{
-		printf("ø’’ª\n");
 		return;
 	}
-	else
-	{
-		*top_data = stack->data[stack->top];
-	}
+
+	*top_data = stack->data[stack->top];
+
 }
 
 void Travel_Stack(Stack* stack)
 {
 	// ø’’ª
-	if (stack->top == -1)
+	if (Stack_Is_Empty(stack))
 	{
-		printf("ø’’ª\n");
 		return;
 	}
-	else
+
+	for (int i = 0; i <= stack->top; i++)
 	{
-		for (int i = 0; i <= stack->top; i++)
-		{
-			printf("%d\n", stack->data[i]);
-		}
+		printf("%d\n", stack->data[i]);
 	}
+	
 }
 
 int main(void)

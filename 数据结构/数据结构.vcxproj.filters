@@ -87,5 +87,11 @@
     <ClCompile Include="3.队列的链式结构.c">
       <Filter>源文件\3.队列</Filter>
     </ClCompile>
+    <ClCompile Include="7.递归.c">
+      <Filter>源文件\0.基础</Filter>
+    </ClCompile>
+    <ClCompile Include="3.表达式求值.c">
+      <Filter>源文件\2.栈</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
