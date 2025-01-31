@@ -57,7 +57,8 @@ typedef enum
 typedef enum
 {
 	Symbol_High,
-	Other
+	Top_High,
+	Equal
 }Priority_Result;
 
 
@@ -202,9 +203,9 @@ ContentType* Transform_Symbol(const char* string)
 /** 分配优先级 **/
 void Init_Priority(ElemType top_data, ContentType symbol_data, int* top_prior, int* symbol_prior)
 {
-	// 栈顶元素
+	// 栈顶元素优先级
 	// 当左括号在栈外时为最高优先级，在栈内为最低优先级
-	if ((top_data == ',') || (top_data == '('))
+	if ((top_data == 'X') || (top_data == '('))
 	{
 		*top_prior = Very_Low;
 	}
@@ -217,8 +218,7 @@ void Init_Priority(ElemType top_data, ContentType symbol_data, int* top_prior, i
 		*top_prior = High;
 	}
 
-
-	// 运算符
+	// 运算符优先级
 	if ((symbol_data == Add) || (symbol_data == Sub))
 	{
 		*symbol_prior = Normal;
@@ -247,11 +247,14 @@ int Compare_Priority(Stack* stack, ContentType symbol_data)
 	{
 		return Symbol_High;
 	}
+	else if(top_prior > symbol_prior)
+	{
+		return Top_High;
+	}
 	else
 	{
-		return Other;
+		return Equal;
 	}
-
 }
 
 int index = 0;
@@ -259,16 +262,12 @@ int index = 0;
 /**  **/
 char* Mid_To_Back(Stack* stack, const char* string)
 {
-	ContentType* symbol = Transform_Symbol(string);
-
 	int len = (int)strlen(string);
 	char* result = (char*)malloc(sizeof(char) * (len + 1));
-	// 输出结果下标
 
+	ContentType* symbol = Transform_Symbol(string);
 
 	ElemType delete_data;
-
-	int flag = 0;
 
 	for (int i = 0; i <= strlen(string); i++)
 	{
@@ -279,37 +278,37 @@ char* Mid_To_Back(Stack* stack, const char* string)
 				result[index++] = string[i];
 				break;
 
-			// 遇到终止符就结束
+			// 遇到终止符先弹出栈内剩余元素(除优先级最低的元素)，然后结束
 			case Eos:
-				delete_data = Get_Top(stack);
-				result[index++] = delete_data;
+				while ((delete_data = Pop_Stack(stack)) != 'X')
+				{
+					result[index++] = delete_data;
+				}
+
+				// 遇到优先级最低的元素再让它回到栈中
+				Push_Stack(stack, delete_data);
+
 				return result;
 				break;
 
 			// 遇到运算符就和栈顶元素比较优先级
 			default:
-				
 				switch(Compare_Priority(stack, symbol[i]))
 				{
 					// 运算符优先级大于栈顶元素优先级, 进栈
 					case Symbol_High:
-						// 如果运算符为右括号且栈顶元素不是左括号，则持续出栈并输出，直到栈顶元素为左括号出栈结束，并将左括号也出栈但不输出
-						while((symbol[i] == Right_Pare) && (Get_Top(stack) != '('))
-						{
-							flag = 1;
-							delete_data = Pop_Stack(stack);
-							result[index++] = delete_data;
-						}
-						// 左括号出栈
-						if ((symbol[i] == Right_Pare) && (Get_Top(stack) == '(') && (flag == 1))
-						{
-							delete_data = Pop_Stack(stack);
-						}
-						
-						// 进栈(如果symbol是右括号就不进栈了)
+
 						if (symbol[i] == Right_Pare)
 						{
+							// 如果运算符为右括号且栈顶元素不是左括号，则持续出栈并输出，直到栈顶元素为左括号出栈结束
+							while (Get_Top(stack) != '(')
+							{
+								delete_data = Pop_Stack(stack);
+								result[index++] = delete_data;
+							}
 
+							// 将左括号也出栈但不输出
+							delete_data = Pop_Stack(stack);
 						}
 						else
 						{
@@ -318,17 +317,22 @@ char* Mid_To_Back(Stack* stack, const char* string)
 
 						break;
 
-					// 否则先把栈顶元素出栈并输出，再让当前运算符进栈
-					default:
+					// 运算符优先级小于栈顶元素优先级, 不处理
+					case Top_High:
+						break;
+
+					// 运算符优先级等于栈顶元素优先级，先把栈顶元素出栈并输出，再让当前运算符进栈
+					case Equal:
+
 						delete_data = Pop_Stack(stack);
 						result[index++] = delete_data;
+
 						Push_Stack(stack, string[i]);
 
 						break;
 				}
 
 				break;
-
 
 
 		}
@@ -344,7 +348,7 @@ int main(void)
 	Stack* stack = Init_Stack();
 
 	// 让优先级最低的元素进栈
-	Push_Stack(stack, ',');
+	Push_Stack(stack, 'X');
 
 	char* result = Mid_To_Back(stack, mid);
 
