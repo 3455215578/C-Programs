@@ -25,6 +25,9 @@
     <Filter Include="源文件\0.基础">
       <UniqueIdentifier>{c2b1e48f-db52-4106-b8b9-18286161337c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\4.树">
+      <UniqueIdentifier>{21d48537-b0b8-457b-9e9c-fc56504566f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1.线性表引入.c">
@@ -95,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="3.2.表达式求值(中缀转后缀).c">
       <Filter>源文件\2.栈</Filter>
+    </ClCompile>
+    <ClCompile Include="1.二叉树的遍历.c">
+      <Filter>源文件\4.树</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
