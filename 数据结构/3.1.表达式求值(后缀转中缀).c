@@ -248,7 +248,6 @@ int Back_To_Mid(Stack* stack, const char* string)
 }
 
 char back[] = "82/2+56*-";
-char mid[] = "8/(5-3)*4"; // 16
 
 int main(void)
 {

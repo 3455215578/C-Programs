@@ -259,7 +259,7 @@ int Compare_Priority(Stack* stack, ContentType symbol_data)
 
 int index = 0;
 
-/**  **/
+/** 进出栈处理 **/
 char* Mid_To_Back(Stack* stack, const char* string)
 {
 	int len = (int)strlen(string);
@@ -341,7 +341,7 @@ char* Mid_To_Back(Stack* stack, const char* string)
 
 }
 
-char mid[] = "8/(5-3)*4"; // 16
+char mid[] = "8/(5-3)*4";
 
 int main(void)
 {

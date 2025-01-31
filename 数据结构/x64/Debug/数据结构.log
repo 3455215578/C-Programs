@@ -2,7 +2,7 @@
 D:\GitHub\Code\C-Programs\数据结构\3.2.表达式求值(中缀转后缀).c(109,3): warning C4033: “Pop_Stack”必须返回值
 D:\GitHub\Code\C-Programs\数据结构\3.2.表达式求值(中缀转后缀).c(125,3): warning C4033: “Get_Top”必须返回值
 D:\GitHub\Code\C-Programs\数据结构\3.2.表达式求值(中缀转后缀).c(151,12): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-D:\GitHub\Code\C-Programs\数据结构\3.2.表达式求值(中缀转后缀).c(130): warning C4715: “Get_Top”: 不是所有的控件路径都返回值
 D:\GitHub\Code\C-Programs\数据结构\3.2.表达式求值(中缀转后缀).c(117): warning C4715: “Pop_Stack”: 不是所有的控件路径都返回值
-D:\GitHub\Code\C-Programs\数据结构\3.2.表达式求值(中缀转后缀).c(344): warning C4715: “Mid_To_Back”: 不是所有的控件路径都返回值
+D:\GitHub\Code\C-Programs\数据结构\3.2.表达式求值(中缀转后缀).c(130): warning C4715: “Get_Top”: 不是所有的控件路径都返回值
+D:\GitHub\Code\C-Programs\数据结构\3.2.表达式求值(中缀转后缀).c(340): warning C4715: “Mid_To_Back”: 不是所有的控件路径都返回值
   数据结构.vcxproj -> D:\GitHub\Code\C-Programs\数据结构\x64\Debug\数据结构.exe
