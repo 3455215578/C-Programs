@@ -90,7 +90,10 @@
     <ClCompile Include="7.递归.c">
       <Filter>源文件\0.基础</Filter>
     </ClCompile>
-    <ClCompile Include="3.表达式求值.c">
+    <ClCompile Include="3.1.表达式求值%28后缀转中缀%29.c">
+      <Filter>源文件\2.栈</Filter>
+    </ClCompile>
+    <ClCompile Include="3.2.表达式求值(中缀转后缀).c">
       <Filter>源文件\2.栈</Filter>
     </ClCompile>
   </ItemGroup>

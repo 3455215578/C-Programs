@@ -66,6 +66,7 @@ void Pop_Stack(Stack* stack, ElemType* delete_data)
 
 }
 
+/** »ñÈ¡Õ»¶¥ÔªËØ **/
 void Get_Top(Stack* stack, ElemType* top_data)
 {
 	// ¿ÕÕ»
