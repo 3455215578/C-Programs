@@ -14,12 +14,12 @@ typedef struct treenode
 typedef TreeNode* BitTree;
 
 char str[] = "ABDH#K###E##CFI###G#J##";
+int index = 0;
 
 /** 创建树(递归) **/
 /** 因为要改变指针的值，所以要用二重指针 **/
 void Create_Tree(BitTree* tree)
 {
-	static int index;
 	char ch = str[index++];
 
 	if (ch == '#')
@@ -32,6 +32,8 @@ void Create_Tree(BitTree* tree)
 		*tree = (TreeNode*)malloc(sizeof(TreeNode));
 		
 		(*tree)->data = ch;
+
+		// 创建子树
 		Create_Tree(&(*tree)->lchild);
 		Create_Tree(&(*tree)->rchild);
 	}
@@ -39,7 +41,7 @@ void Create_Tree(BitTree* tree)
 }
 
 /** 前序遍历 **/
-void Pre_Travel(BitTree tree)
+void Preorder_Travel(BitTree tree)
 {
 	if (tree == NULL)
 	{
@@ -47,32 +49,32 @@ void Pre_Travel(BitTree tree)
 	}
 
 	printf("%c\n", tree->data);
-	Pre_Travel(tree->lchild);
-	Pre_Travel(tree->rchild);
+	Preorder_Travel(tree->lchild);
+	Preorder_Travel(tree->rchild);
 }
 
 /** 中序遍历 **/
-void In_Travel(BitTree tree)
+void Inorder_Travel(BitTree tree)
 {
 	if (tree == NULL)
 	{
 		return;
 	}
 
-	Pre_Travel(tree->lchild);
+	Inorder_Travel(tree->lchild);
 	printf("%c\n", tree->data);
-	Pre_Travel(tree->rchild);
+	Inorder_Travel(tree->rchild);
 }
 
 /** 后序遍历 **/
-void Post_Travel(BitTree tree)
+void Postorder_Travel(BitTree tree)
 {
 	if (tree == NULL)
 	{
 		return;
 	}
-	Pre_Travel(tree->lchild);
-	Pre_Travel(tree->rchild);
+	Postorder_Travel(tree->lchild);
+	Postorder_Travel(tree->rchild);
 	printf("%c\n", tree->data);
 }
 

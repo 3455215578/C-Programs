@@ -102,5 +102,8 @@
     <ClCompile Include="1.二叉树的遍历.c">
       <Filter>源文件\4.树</Filter>
     </ClCompile>
+    <ClCompile Include="2.线索二叉树.c">
+      <Filter>源文件\4.树</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
