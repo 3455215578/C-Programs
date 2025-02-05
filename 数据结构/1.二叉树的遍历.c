@@ -83,7 +83,7 @@ int main(void)
 	BitTree tree;
 	Create_Tree(&tree);
 
-	In_Travel(tree);
+	Inorder_Travel(tree);
 
 	return 0;
 }
