@@ -28,6 +28,9 @@
     <Filter Include="源文件\4.树">
       <UniqueIdentifier>{21d48537-b0b8-457b-9e9c-fc56504566f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\5.图">
+      <UniqueIdentifier>{70b5bed5-e3b9-4ae6-98e3-018dc2aa24ea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1.线性表引入.c">
@@ -110,6 +113,12 @@
     </ClCompile>
     <ClCompile Include="4.计算带权路径长度.c">
       <Filter>源文件\4.树</Filter>
+    </ClCompile>
+    <ClCompile Include="1.深度优先.c">
+      <Filter>源文件\5.图</Filter>
+    </ClCompile>
+    <ClCompile Include="2.广度优先.c">
+      <Filter>源文件\5.图</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
