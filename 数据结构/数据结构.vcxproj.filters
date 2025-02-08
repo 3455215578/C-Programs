@@ -120,5 +120,8 @@
     <ClCompile Include="2.广度优先.c">
       <Filter>源文件\5.图</Filter>
     </ClCompile>
+    <ClCompile Include="3.最小生成树-Prim算法.c">
+      <Filter>源文件\5.图</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

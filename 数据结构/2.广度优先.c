@@ -103,27 +103,20 @@ void BFS(MatGraph graph)
 
 	while (front != rear)
 	{
-		int count = rear - front;
+		int curr = queue[front] - 'A';
+		front++;
 
-		while (count > 0)
+		for (int j = 0; j < graph.vertex_num; j++)
 		{
-			int curr = queue[front] - 'A';
-			front++;
-
-			for (int j = 0; j < graph.vertex_num; j++)
+			if ((graph.edge[curr][j] == 1) && (visited[j] == 0))
 			{
-				if ((graph.edge[curr][j] == 1) && (visited[j] == 0))
-				{
-					visited[j] = 1;
-					printf("%c\n", graph.vertex[j]);
+				visited[j] = 1;
+				printf("%c\n", graph.vertex[j]);
 
-					queue[rear] = graph.vertex[j];
-					rear++;
+				queue[rear] = graph.vertex[j];
+				rear++;
 
-				}
 			}
-
-			count--;
 		}
 	}
 }
