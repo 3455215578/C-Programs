@@ -123,5 +123,11 @@
     <ClCompile Include="3.最小生成树-Prim算法.c">
       <Filter>源文件\5.图</Filter>
     </ClCompile>
+    <ClCompile Include="4.最小生成树-Kruskal算法.c">
+      <Filter>源文件\5.图</Filter>
+    </ClCompile>
+    <ClCompile Include="test4.c">
+      <Filter>源文件\5.图</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
