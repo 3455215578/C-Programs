@@ -120,13 +120,13 @@
     <ClCompile Include="2.广度优先.c">
       <Filter>源文件\5.图</Filter>
     </ClCompile>
-    <ClCompile Include="3.最小生成树-Prim算法.c">
+    <ClCompile Include="3.最小生成树-Prim.c">
       <Filter>源文件\5.图</Filter>
     </ClCompile>
-    <ClCompile Include="4.最小生成树-Kruskal算法.c">
+    <ClCompile Include="4.最小生成树-Kruskal.c">
       <Filter>源文件\5.图</Filter>
     </ClCompile>
-    <ClCompile Include="test4.c">
+    <ClCompile Include="5.最短路径-Dijkstra.c">
       <Filter>源文件\5.图</Filter>
     </ClCompile>
   </ItemGroup>
