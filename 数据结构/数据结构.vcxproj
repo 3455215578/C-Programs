@@ -127,100 +127,100 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="1.二叉树的遍历.c">
+    <ClCompile Include="Src\4.树\1.二叉树的遍历.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="1.字符串.c">
+    <ClCompile Include="Src\0.基础\1.字符串.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="1.深度优先.c">
+    <ClCompile Include="Src\5.图\1.深度优先.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="2.广度优先.c">
+    <ClCompile Include="Src\5.图\2.广度优先.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="2.线索二叉树.c">
+    <ClCompile Include="Src\4.树\2.线索二叉树.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="2.遍历数组.c">
+    <ClCompile Include="Src\0.基础\2.遍历数组.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="3.2.表达式求值(中缀转后缀).c">
+    <ClCompile Include="Src\2.栈\3.2.表达式求值%28中缀转后缀%29.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="3.函数按值传递和按地址传递.c">
+    <ClCompile Include="Src\0.基础\3.函数按值传递和按地址传递.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="3.1.表达式求值%28后缀转中缀%29.c">
+    <ClCompile Include="Src\2.栈\3.1.表达式求值%28后缀转中缀%29.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="3.层序遍历.c">
+    <ClCompile Include="Src\4.树\3.层序遍历.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="3.最小生成树-Prim.c">
+    <ClCompile Include="Src\5.图\3.最小生成树-Prim.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="3.队列的链式结构.c">
+    <ClCompile Include="Src\3.队列\3.队列的链式结构.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="4.指针与数组的关系.c">
+    <ClCompile Include="Src\0.基础\4.指针与数组的关系.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="4.最小生成树-Kruskal.c">
+    <ClCompile Include="Src\5.图\4.最小生成树-Kruskal.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="4.计算带权路径长度.c">
+    <ClCompile Include="Src\4.树\4.计算带权路径长度.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="5.结构体.c">
+    <ClCompile Include="Src\0.基础\5.结构体.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="6.动态分配内存.c">
+    <ClCompile Include="Src\0.基础\6.动态分配内存.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="1.线性表引入.c">
+    <ClCompile Include="Src\1.链表\1.线性表引入.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="2.顺序表.c">
+    <ClCompile Include="Src\1.链表\2.顺序表.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="3.单链表.c">
+    <ClCompile Include="Src\1.链表\3.单链表.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="4.1.单链表应用.c">
+    <ClCompile Include="Src\1.链表\4.1.单链表应用.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="4.2.单链表应用--反转链表.c">
+    <ClCompile Include="Src\1.链表\4.2.单链表应用--反转链表.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="4.3.单链表应用--删除中间节点.c">
+    <ClCompile Include="Src\1.链表\4.3.单链表应用--删除中间节点.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="4.4.单链表应用.c">
+    <ClCompile Include="Src\1.链表\4.4.单链表应用.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="5.循环链表.c">
+    <ClCompile Include="Src\1.链表\5.循环链表.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="1.栈的顺序结构.c">
+    <ClCompile Include="2.栈\1.栈的顺序结构.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="6.双向链表.c">
+    <ClCompile Include="Src\1.链表\6.双向链表.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="2.栈的链式结构.c">
+    <ClCompile Include="2.栈\2.栈的链式结构.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="1.队列的顺序结构.c">
+    <ClCompile Include="Src\3.队列\1.队列的顺序结构.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="2.循环队列.c">
+    <ClCompile Include="Src\3.队列\2.循环队列.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="7.递归.c">
+    <ClCompile Include="Src\0.基础\7.递归.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="5.最短路径-Dijkstra.c">
+    <ClCompile Include="Src\5.图\5.最短路径-Dijkstra.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </ExcludedFromBuild>
     </ClCompile>
